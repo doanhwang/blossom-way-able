@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>내 이야기가 방송이 되는 시간 · 장애인 1:1 AI 라디오 방송국 개국 참여자 모집</title>
+<meta name="description" content="당신의 사연을 AI DJ가 1:1 라디오 방송으로 되돌려 드립니다. 장애인 당사자 중심 AI 라디오 방송국 — 개국 파일럿 30명 모집." />
+<meta property="og:title" content="내 이야기가 방송이 되는 시간" />
+<meta property="og:description" content="장애인 1:1 AI 라디오 방송국 · 개국 참여자 모집" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@400;500;600&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+<style>
+  :root {
+    --paper: #f4ede0;
+    --paper-deep: #ece4d2;
+    --ink: #1f1a14;
+    --ink-soft: #4a3f30;
+    --ink-mute: #7a6f5d;
+    --amber: #a8703a;
+    --amber-deep: #7a4f24;
+    --rose: #b87a6a;
+    --line: #d8cdb6;
+    --warm-shadow: 0 1px 0 rgba(31, 26, 20, 0.04), 0 12px 40px -16px rgba(122, 79, 36, 0.18);
+    --serif: 'Nanum Myeongjo', 'Noto Serif KR', 'Gowun Batang', serif;
+    --serif-soft: 'Noto Serif KR', 'Nanum Myeongjo', serif;
+    --sans: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.85;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(168, 112, 58, 0.06), transparent 50%),
+      radial-gradient(circle at 85% 70%, rgba(184, 122, 106, 0.05), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  /* paper grain */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.10 0 0 0 0 0.08 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.6;
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+
+  main, header, section, footer { position: relative; z-index: 2; }
+
+  /* skip link for accessibility */
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip:focus {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    padding: 0.75rem 1.25rem;
+    background: var(--ink);
+    color: var(--paper);
+    z-index: 100;
+    border-radius: 4px;
+  }
+
+  /* layout */
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .wrap-wide {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* top bar */
+  .topbar {
+    padding: 1.75rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  .topbar .mark {
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+  }
+  .topbar .mark::before {
+    content: '◐';
+    color: var(--amber);
+    margin-right: 0.5rem;
+  }
+  .topbar .issue {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+  }
+
+  /* HERO */
+  .hero {
+    padding: 5rem 0 6rem;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .hero .kicker {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    text-transform: none;
+    color: var(--amber-deep);
+    margin-bottom: 2.5rem;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--amber);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: clamp(2.4rem, 6vw, 4.4rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.5rem;
+    color: var(--ink);
+  }
+  .hero h1 .line2 {
+    display: block;
+    color: var(--amber-deep);
+    font-style: italic;
+    font-weight: 700;
+  }
+  .hero .lede {
+    font-family: var(--serif-soft);
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    line-height: 1.85;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin: 0 0 2.75rem;
+  }
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.75rem;
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-primary:hover, .btn-primary:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px -8px rgba(31, 26, 20, 0.4);
+    background: var(--amber-deep);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--ink-mute);
+    border-radius: 0;
+    padding: 0.5rem 0.25rem;
+  }
+  .btn-ghost:hover, .btn-ghost:focus-visible {
+    color: var(--amber-deep);
+    border-bottom-color: var(--amber-deep);
+  }
+  .btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
+
+  .counter {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--line);
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    color: var(--ink-mute);
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+  .counter .num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--amber-deep);
+    font-family: var(--serif);
+  }
+  .counter .target {
+    color: var(--ink-mute);
+    font-size: 0.9rem;
+  }
+
+  /* radio dial decoration */
+  .dial {
+    position: absolute;
+    right: -2rem;
+    top: 5rem;
+    width: 280px;
+    height: 280px;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  @media (max-width: 900px) { .dial { display: none; } }
+
+  /* sections */
+  section {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--amber-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 0 0 2.5rem;
+  }
+
+  /* promise */
+  .promise blockquote {
+    font-family: var(--serif);
+    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+    line-height: 1.9;
+    color: var(--ink-soft);
+    border-left: 2px solid var(--amber);
+    padding: 0.5rem 0 0.5rem 1.75rem;
+    margin: 0 0 2rem;
+    font-style: italic;
+  }
+  .promise p {
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  .promise cite {
+    font-family: var(--serif);
+    color: var(--ink-mute);
+    font-style: normal;
+    font-size: 0.9rem;
+  }
+
+  /* what */
+  .what-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .what-card {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .what-card h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+    color: var(--ink);
+  }
+  .what-card .num {
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    color: var(--amber-deep);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .what-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  /* steps */
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .steps li {
+    counter-increment: step;
+    padding: 1.5rem 0 1.5rem 5rem;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    color: var(--ink-soft);
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--amber-deep);
+    font-weight: 700;
+  }
+  .steps li strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+  }
+
+  /* who */
+  .who-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--ink-soft);
+  }
+  .who-list li {
+    padding: 0.85rem 0;
+    border-bottom: 1px dotted var(--line);
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .who-list li::before {
+    content: '·';
+    color: var(--amber-deep);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* form section */
+  .form-section {
+    background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  }
+  .form-card {
+    background: #fbf6ec;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    border: 1px solid var(--line);
+    box-shadow: var(--warm-shadow);
+    margin-top: 2rem;
+    border-radius: 2px;
+  }
+  .form-intro {
+    font-family: var(--serif);
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 0 0 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .field-group {
+    margin-bottom: 1.75rem;
+  }
+  .field-label {
+    display: block;
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 1.05rem;
+    margin-bottom: 0.6rem;
+  }
+  .field-label .req {
+    color: var(--amber-deep);
+    font-weight: 400;
+    margin-left: 0.25rem;
+  }
+  .field-help {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--ink-mute);
+    margin-bottom: 0.75rem;
+    line-height: 1.65;
+  }
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    color: var(--ink);
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    line-height: 1.5;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--amber);
+    box-shadow: 0 0 0 3px rgba(168, 112, 58, 0.15);
+  }
+  textarea { min-height: 110px; resize: vertical; font-family: var(--serif-soft); }
+
+  /* radio / checkbox */
+  .options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.5rem;
+  }
+  .options label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--line);
+    background: #ffffff;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+    border-radius: 2px;
+  }
+  .options label:hover { border-color: var(--amber); background: #fffaf0; }
+  .options input[type="radio"],
+  .options input[type="checkbox"] {
+    width: 18px; height: 18px;
+    accent-color: var(--amber-deep);
+    flex-shrink: 0;
+  }
+  .options input:checked + span {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .options label:has(input:checked) {
+    border-color: var(--amber-deep);
+    background: #fbefdb;
+  }
+
+  .consent {
+    background: #f0e7d3;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--amber);
+    margin: 2rem 0 1.5rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+  .consent label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 0.5rem;
+  }
+  .consent input { width: 20px; height: 20px; accent-color: var(--amber-deep); margin-top: 2px; }
+
+  .submit-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  .btn-submit {
+    background: var(--amber-deep);
+    color: var(--paper);
+    padding: 1.1rem 2.5rem;
+    font-size: 1.05rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  .btn-submit:hover, .btn-submit:focus-visible {
+    background: var(--ink);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px -10px rgba(31, 26, 20, 0.4);
+  }
+  .btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* confirmation */
+  .confirmation {
+    display: none;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .confirmation.shown { display: block; animation: fadeUp 0.5s ease both; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .confirmation .seal {
+    font-size: 3rem;
+    color: var(--amber-deep);
+    margin-bottom: 1rem;
+  }
+  .confirmation h3 {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    margin: 0 0 1rem;
+    color: var(--ink);
+  }
+  .confirmation .summary {
+    text-align: left;
+    background: #f0e7d3;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 480px;
+    font-family: var(--serif-soft);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    border-left: 3px solid var(--amber);
+  }
+  .confirmation .summary dt {
+    color: var(--ink-mute);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  .confirmation .summary dt:first-child { margin-top: 0; }
+  .confirmation .summary dd {
+    color: var(--ink);
+    margin: 0.15rem 0 0.5rem;
+  }
+  .confirmation .next-steps {
+    color: var(--ink-soft);
+    margin-top: 2rem;
+    font-family: var(--serif-soft);
+  }
+
+  /* alt channels */
+  .channels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .channel {
+    padding: 1.5rem;
+    background: #fbf6ec;
+    border: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .channel:hover {
+    border-color: var(--amber-deep);
+    transform: translateY(-2px);
+    box-shadow: var(--warm-shadow);
+  }
+  .channel .ch-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .channel .ch-label {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+  }
+  .channel .ch-detail {
+    font-size: 0.9rem;
+    color: var(--ink-mute);
+    line-height: 1.6;
+  }
+
+  /* faq */
+  details {
+    border-bottom: 1px solid var(--line);
+    padding: 1.25rem 0;
+  }
+  details summary {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1rem;
+  }
+  details summary::after {
+    content: '＋';
+    font-family: var(--serif);
+    color: var(--amber-deep);
+    font-size: 1.4rem;
+    transition: transform 0.2s;
+  }
+  details[open] summary::after { content: '−'; }
+  details summary::-webkit-details-marker { display: none; }
+  details p {
+    margin: 1rem 0 0;
+    color: var(--ink-soft);
+    line-height: 1.85;
+  }
+
+  /* footer */
+  footer {
+    background: #1f1a14;
+    color: #d4c8b3;
+    padding: 4rem 0 3rem;
+    margin-top: 0;
+    z-index: 2;
+    position: relative;
+  }
+  footer .wrap-wide { color: #d4c8b3; }
+  footer .org-line {
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    color: #a89878;
+    margin-bottom: 1.5rem;
+  }
+  footer h4 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: #f4ede0;
+    margin: 0 0 1rem;
+    font-weight: 700;
+  }
+  footer p {
+    color: #a89878;
+    font-size: 0.95rem;
+    line-height: 1.85;
+    max-width: 580px;
+    margin: 0 0 1.5rem;
+  }
+  footer .partners {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid #3a3024;
+    border-bottom: 1px solid #3a3024;
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    color: #d4c8b3;
+  }
+  footer .partners span { color: #8a7858; font-style: italic; margin-right: 0.5rem; font-size: 0.85rem; }
+  footer .legal {
+    font-size: 0.82rem;
+    color: #6a5a40;
+    line-height: 1.7;
+    margin-top: 1.5rem;
+  }
+
+  /* error message */
+  .error-msg {
+    color: #a82a1a;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+  }
+  .error-msg.shown { display: block; }
+
+  /* high contrast preference */
+  @media (prefers-contrast: more) {
+    :root {
+      --ink: #000000;
+      --paper: #ffffff;
+      --line: #555555;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 3rem 0 4rem; }
+    .topbar { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+    section { padding: 3.5rem 0; }
+    body { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#signup">참여 신청 양식으로 바로가기</a>
+
+<header class="wrap-wide">
+  <div class="topbar">
+    <span class="mark">BLOSSOM W.A.Y. RADIO</span>
+    <span class="issue">제1호 · 개국 파일럿 · 2026</span>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<div class="hero wrap-wide">
+  <div class="wrap" style="padding-left:0; padding-right:0;">
+    <span class="kicker">장애인 1:1 AI 라디오 방송국 · 개국 참여자 모집</span>
+    <h1>
+      내 이야기가
+      <span class="line2">방송이 되는 시간.</span>
+    </h1>
+    <p class="lede">
+      당신의 사연을 AI DJ가 하루의 1:1 라디오 방송으로 되돌려 드립니다.
+      위로가 필요한 날, 가족에게 마음을 전하고 싶은 날,
+      누군가 내 하루를 알아주었으면 하는 날 — 당신의 이야기가 매일의 방송이 됩니다.
+    </p>
+    <div class="hero-cta">
+      <a href="#signup" class="btn btn-primary">개국 참여자로 신청하기 →</a>
+      <a href="#about" class="btn btn-ghost">이 방송국에 대하여</a>
+    </div>
+    <div class="counter" aria-live="polite">
+      <span class="num" id="signup-count">—</span>
+      <span>분이 함께하고 있습니다.</span>
+      <span class="target" id="signup-target">· 1차 파일럿 정원 30명</span>
+    </div>
+  </div>
+  <svg class="dial" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="100" cy="100" r="92" fill="none" stroke="#a8703a" stroke-width="0.5" opacity="0.5"/>
+    <circle cx="100" cy="100" r="78" fill="none" stroke="#a8703a" stroke-width="0.5" opacity="0.4"/>
+    <circle cx="100" cy="100" r="62" fill="none" stroke="#a8703a" stroke-width="0.5" opacity="0.3"/>
+    <g stroke="#7a4f24" stroke-width="1" stroke-linecap="round">
+      <line x1="100" y1="14" x2="100" y2="22"/>
+      <line x1="186" y1="100" x2="178" y2="100"/>
+      <line x1="100" y1="186" x2="100" y2="178"/>
+      <line x1="14" y1="100" x2="22" y2="100"/>
+      <line x1="160" y1="40" x2="155" y2="45"/>
+      <line x1="160" y1="160" x2="155" y2="155"/>
+      <line x1="40" y1="160" x2="45" y2="155"/>
+      <line x1="40" y1="40" x2="45" y2="45"/>
+    </g>
+    <line x1="100" y1="100" x2="158" y2="58" stroke="#7a4f24" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="100" cy="100" r="5" fill="#7a4f24"/>
+    <text x="100" y="50" text-anchor="middle" font-family="Nanum Myeongjo, serif" font-size="9" fill="#7a4f24" font-style="italic">ON AIR</text>
+  </svg>
+</div>
+
+<!-- PROMISE -->
+<section class="promise" id="about">
+  <div class="wrap">
+    <div class="section-label">시작 — 한 사람과의 약속에서</div>
+    <h2 class="section-title">보이지 않는 곳에서도<br>라디오는 말을 건넵니다.</h2>
+    <blockquote>
+      매일의 목소리가 곁에 있어야 한다는 약속.
+      그 한 마디가 BLOSSOM W.A.Y.의 처음이었고,
+      이제 더 많은 분과 그 시간을 나누려 합니다.
+    </blockquote>
+    <p>
+      이 방송국은 장애인을 ‘대상’으로 만들기 위한 곳이 아닙니다.
+      장애인 한 분 한 분의 사연이 그 자체로 한 편의 방송이 되고,
+      그 목소리가 매일의 동행이 되는 곳입니다.
+      복지의 자리도, 기술의 자리도 아닌 — 사람의 자리입니다.
+    </p>
+    <p>
+      <cite>— 휴리스틱 대표 박두가</cite>
+    </p>
+  </div>
+</section>
+
+<!-- WHAT IS IT -->
+<section>
+  <div class="wrap">
+    <div class="section-label">이 방송국은 무엇입니까</div>
+    <h2 class="section-title">한 사람을 위해<br>매일 전파를 띄우는 라디오.</h2>
+    <p style="color: var(--ink-soft); max-width: 600px;">
+      기존 방송이 다수를 향해 송출된다면, 이 방송국은 오직 당신만을 위해 만들어집니다.
+      당신이 남긴 사연을 AI DJ가 읽고, 위로하고, 응원하고,
+      필요한 정보를 더해 한 편의 라디오 프로그램으로 되돌려 드립니다.
+    </p>
+    <div class="what-grid">
+      <div class="what-card">
+        <div class="num">01</div>
+        <h3>오늘의 안부 방송</h3>
+        <p>특별한 사연이 없는 날에도, AI DJ가 당신의 하루에 잠시 라디오 한 채널을 켜 드립니다.</p>
+      </div>
+      <div class="what-card">
+        <div class="num">02</div>
+        <h3>내 이야기 방송</h3>
+        <p>당신이 남긴 사연이 동정이 아닌 존중의 서사로 재구성되어 방송됩니다.</p>
+      </div>
+      <div class="what-card">
+        <div class="num">03</div>
+        <h3>가족에게 보내는 방송</h3>
+        <p>직접 말하기 어려운 마음을 라디오 형식으로 가족에게 전합니다.</p>
+      </div>
+      <div class="what-card">
+        <div class="num">04</div>
+        <h3>건강 루틴 방송</h3>
+        <p>지시가 아닌 동행의 어조로, 당뇨·만성질환·운동 루틴을 부드럽게 함께합니다.</p>
+      </div>
+      <div class="what-card">
+        <div class="num">05</div>
+        <h3>나의 응원가</h3>
+        <p>당신의 사연을 바탕으로 한 맞춤형 음악·응원 콘텐츠가 더해집니다.</p>
+      </div>
+      <div class="what-card">
+        <div class="num">06</div>
+        <h3>조합원·회원 방송</h3>
+        <p>장애인 단체·노조와 함께할 경우, 권익 정보·조직 소식이 함께 전달됩니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="wrap">
+    <div class="section-label">어떻게 진행됩니까</div>
+    <h2 class="section-title">참여부터 첫 방송까지,<br>다섯 단계.</h2>
+    <ol class="steps">
+      <li>
+        <strong>가입 신청</strong>
+        이름(또는 별명), 연락 방식, 듣고 싶은 방송 스타일을 알려 주세요. 길게 쓰지 않아도 괜찮습니다.
+      </li>
+      <li>
+        <strong>첫 사연 남기기</strong>
+        문자, 음성, 카카오톡, 전화 녹음 — 가장 편한 방식으로 한 줄이면 충분합니다.
+      </li>
+      <li>
+        <strong>AI DJ가 1:1 방송 제작</strong>
+        당신의 사연·취향·상황에 맞춰 오프닝부터 클로징까지, 오직 당신을 위한 한 편의 라디오를 만듭니다.
+      </li>
+      <li>
+        <strong>방송 전달</strong>
+        링크, 카카오톡, 문자, 음성파일 등 가장 편한 방식으로 받으실 수 있습니다.
+      </li>
+      <li>
+        <strong>피드백 — 방송이 점점 당신다워집니다</strong>
+        한 번의 짧은 답이 다음 방송을 한층 더 당신답게 만듭니다. 이것이 ‘장애인 취향지능’입니다.
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- WHO -->
+<section>
+  <div class="wrap">
+    <div class="section-label">누가 함께할 수 있습니까</div>
+    <h2 class="section-title">장애인 당사자가<br>가장 먼저입니다.</h2>
+    <ul class="who-list">
+      <li>일상에서 외로움이나 정서적 동행이 필요한 분</li>
+      <li>자신의 이야기를 누군가에게 전하고 싶은 분</li>
+      <li>건강 관리·운동·생활 루틴을 부담 없이 챙기고 싶은 분</li>
+      <li>가족이나 지인에게 마음을 전하고 싶은 분</li>
+      <li>장애인 노조·단체·복지관·자립생활센터 회원</li>
+      <li>장애인 가족·활동지원사·돌봄자(장애인 당사자의 동의 하에 함께)</li>
+      <li>장애인 당뇨인·만성질환 보유 장애인</li>
+    </ul>
+    <p style="margin-top: 2rem; color: var(--ink-mute); font-size: 0.95rem; font-style: italic; font-family: var(--serif-soft);">
+      장애 등급이 아니라 삶의 결을 기준으로 다가갑니다.
+      장애 정보 입력은 모두 선택사항이며, ‘말하고 싶지 않음’이 기본값입니다.
+    </p>
+  </div>
+</section>
+
+<!-- SIGNUP FORM -->
+<section class="form-section" id="signup">
+  <div class="wrap">
+    <div class="section-label">참여 신청</div>
+    <h2 class="section-title">개국 참여자로 신청하기.</h2>
+    <p style="color: var(--ink-soft); max-width: 600px;">
+      신청해 주신 분께는 <strong style="color: var(--amber-deep);">첫 1:1 라디오 방송 1편을 무료</strong>로 제작해 보내 드립니다.
+      웹폼이 어려우시면 아래의 <a href="#channels" style="color: var(--amber-deep); border-bottom: 1px solid var(--amber);">다른 신청 방법</a>도 모두 동일하게 받아 드립니다.
+    </p>
+
+    <div class="form-card" id="form-card">
+      <p class="form-intro">
+        필수 항목은 세 가지뿐입니다 — 부르실 이름, 연락 방식, 그리고 동의.
+        나머지는 마음 가는 만큼만 적어 주세요.
+      </p>
+
+      <form id="signup-form" novalidate>
+
+        <!-- 이름 -->
+        <div class="field-group">
+          <label class="field-label" for="name">
+            이름 또는 별명 <span class="req">·필수</span>
+          </label>
+          <span class="field-help">방송에서 어떻게 불러 드릴지 알려 주세요.</span>
+          <input type="text" id="name" name="name" required maxlength="30" autocomplete="nickname" />
+          <div class="error-msg" id="err-name">이름 또는 별명을 알려 주세요.</div>
+        </div>
+
+        <!-- 연락 방식 -->
+        <div class="field-group">
+          <label class="field-label">
+            방송을 받을 방식 <span class="req">·필수</span>
+          </label>
+          <span class="field-help">가장 편한 채널을 하나만 골라 주세요.</span>
+          <div class="options" role="radiogroup" aria-required="true">
+            <label><input type="radio" name="channel" value="kakao" required /> <span>카카오톡 링크</span></label>
+            <label><input type="radio" name="channel" value="sms" /> <span>문자 (SMS)</span></label>
+            <label><input type="radio" name="channel" value="call" /> <span>전화 음성 안내</span></label>
+            <label><input type="radio" name="channel" value="email" /> <span>이메일</span></label>
+            <label><input type="radio" name="channel" value="caregiver" /> <span>보호자/활동지원사 전달</span></label>
+          </div>
+          <div class="error-msg" id="err-channel">방송을 받을 방식을 하나 선택해 주세요.</div>
+        </div>
+
+        <!-- 연락처 -->
+        <div class="field-group">
+          <label class="field-label" for="contact">
+            연락처 <span class="req">·필수</span>
+          </label>
+          <span class="field-help">선택하신 채널에 따라 휴대폰 번호 또는 이메일을 적어 주세요.</span>
+          <input type="text" id="contact" name="contact" required maxlength="100" autocomplete="tel" placeholder="예) 010-1234-5678 또는 name@email.com" />
+          <div class="error-msg" id="err-contact">연락 받으실 번호 또는 이메일을 알려 주세요.</div>
+        </div>
+
+        <!-- 첫 방송 주제 -->
+        <div class="field-group">
+          <label class="field-label">
+            첫 방송에서 가장 듣고 싶은 것은 무엇인가요?
+          </label>
+          <span class="field-help">선택사항. 여러 개 골라도 됩니다.</span>
+          <div class="options">
+            <label><input type="checkbox" name="topic" value="위로와 안부" /> <span>위로와 안부</span></label>
+            <label><input type="checkbox" name="topic" value="건강 응원" /> <span>건강·운동 응원</span></label>
+            <label><input type="checkbox" name="topic" value="가족 메시지" /> <span>가족에게 전하고 싶은 말</span></label>
+            <label><input type="checkbox" name="topic" value="외로움" /> <span>외로움</span></label>
+            <label><input type="checkbox" name="topic" value="일상 이야기" /> <span>일상 이야기</span></label>
+            <label><input type="checkbox" name="topic" value="권익 정보" /> <span>장애인 권익 정보</span></label>
+            <label><input type="checkbox" name="topic" value="노래와 응원" /> <span>나의 응원가</span></label>
+            <label><input type="checkbox" name="topic" value="기타" /> <span>기타</span></label>
+          </div>
+        </div>
+
+        <!-- DJ 스타일 -->
+        <div class="field-group">
+          <label class="field-label" for="dj-style">
+            선호하는 DJ 분위기
+          </label>
+          <span class="field-help">선택사항. 듣다 보면 점점 더 당신다워집니다.</span>
+          <select id="dj-style" name="dj_style">
+            <option value="">— 선택하지 않아도 됩니다 —</option>
+            <option value="warm-female">따뜻한 여성 DJ</option>
+            <option value="calm-male">차분한 남성 DJ</option>
+            <option value="bright">밝고 경쾌한 DJ</option>
+            <option value="friend">친구 같은 말투</option>
+            <option value="formal">품격 있고 정중한 말투</option>
+            <option value="slow">천천히 설명하는 방송</option>
+            <option value="concise">짧고 명확한 안내</option>
+          </select>
+        </div>
+
+        <!-- 한 줄 사연 -->
+        <div class="field-group">
+          <label class="field-label" for="story">
+            요즘 가장 자주 드는 마음, 한 줄.
+          </label>
+          <span class="field-help">선택사항. 길게 쓰지 않으셔도 됩니다. 첫 방송의 씨앗이 됩니다.</span>
+          <textarea id="story" name="story" maxlength="500" placeholder="예) 요즘 혼자 있는 시간이 많아서 조금 외롭습니다."></textarea>
+        </div>
+
+        <!-- 단체 (옵션) -->
+        <div class="field-group">
+          <label class="field-label" for="org">
+            소속 단체·노조 (있으신 경우)
+          </label>
+          <span class="field-help">선택사항. 단체 단위로 함께 신청할 수 있습니다.</span>
+          <input type="text" id="org" name="org" maxlength="80" placeholder="예) ○○장애인자립생활센터" />
+        </div>
+
+        <!-- 장애 유형 (선택) -->
+        <div class="field-group">
+          <label class="field-label" for="disability">
+            장애 유형 (말씀해 주시면 방송이 더 자기다워집니다)
+          </label>
+          <span class="field-help">선택사항. 기본값은 ‘말하고 싶지 않음’입니다.</span>
+          <select id="disability" name="disability">
+            <option value="prefer-not">말하고 싶지 않음</option>
+            <option value="visual">시각장애</option>
+            <option value="hearing">청각장애</option>
+            <option value="physical">지체장애</option>
+            <option value="brain">뇌병변장애</option>
+            <option value="developmental">발달장애</option>
+            <option value="psychiatric">정신장애</option>
+            <option value="kidney">신장장애</option>
+            <option value="heart">심장장애</option>
+            <option value="respiratory">호흡기장애</option>
+            <option value="other">기타</option>
+          </select>
+        </div>
+
+        <!-- 동의 -->
+        <div class="consent">
+          <strong style="color: var(--ink); display: block; font-family: var(--serif); margin-bottom: 0.5rem;">우리의 약속</strong>
+          <ul style="margin: 0.25rem 0 0; padding-left: 1.25rem; color: var(--ink-soft); font-size: 0.92rem;">
+            <li>당신의 사연은 당신의 것입니다. 언제든 폐기·회수·비공개를 요청하실 수 있습니다.</li>
+            <li>방송은 본인 동의 없이 외부에 공개되지 않습니다.</li>
+            <li>수집된 정보는 방송 제작과 안내 외의 목적으로 사용되지 않습니다.</li>
+            <li>장애 정보 입력은 전부 선택사항이며 ‘말하고 싶지 않음’이 기본입니다.</li>
+          </ul>
+          <label>
+            <input type="checkbox" id="agree" name="agree" required />
+            <span>위 내용을 읽었으며, 첫 방송 제작을 위한 정보 활용에 동의합니다.</span>
+          </label>
+          <div class="error-msg" id="err-agree" style="margin-left: 2rem;">참여를 위해 동의가 필요합니다.</div>
+        </div>
+
+        <div class="submit-wrap">
+          <button type="submit" class="btn btn-submit">개국 참여 신청 보내기 →</button>
+          <span style="font-size: 0.88rem; color: var(--ink-mute); font-family: var(--serif-soft); font-style: italic;">
+            제출하시면 다음 단계 안내 메시지가 준비됩니다.
+          </span>
+        </div>
+      </form>
+
+      <!-- confirmation -->
+      <div class="confirmation" id="confirmation" role="status" aria-live="polite">
+        <div class="seal" aria-hidden="true">◐</div>
+        <h3>당신의 이야기를 잘 받았습니다.</h3>
+        <p style="color: var(--ink-soft); font-family: var(--serif-soft);">
+          이 페이지에 신청 사실이 안전하게 기록되었습니다.<br>
+          이제 아래 두 가지 중 한 가지를 해 주세요.
+        </p>
+        <dl class="summary" id="summary"></dl>
+        <div class="next-steps">
+          <p style="margin-bottom: 1.5rem;"><strong style="color: var(--ink);">① 가장 빠른 방법</strong> — 운영팀에게 신청 내용을 그대로 전달해 주세요.</p>
+          <a id="mailto-btn" href="#" class="btn btn-primary" style="margin-bottom: 1rem;">
+            ✉ 운영팀에 메일로 전달하기
+          </a>
+          <p style="margin: 1.5rem 0 0; font-size: 0.95rem;">
+            <strong style="color: var(--ink);">② 또는</strong> 카카오톡·전화로 동일하게 받아 드립니다 →
+            <a href="#channels" style="color: var(--amber-deep); border-bottom: 1px solid var(--amber);">다른 신청 방법 보기</a>
+          </p>
+          <p style="margin-top: 2.5rem; font-style: italic; color: var(--ink-mute);">
+            이 방송국의 첫 청취자가 되어 주셔서 감사합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALTERNATE CHANNELS -->
+<section id="channels">
+  <div class="wrap">
+    <div class="section-label">다른 신청 방법</div>
+    <h2 class="section-title">웹폼이 불편하시면<br>이 방법들 모두 환영합니다.</h2>
+    <p style="color: var(--ink-soft);">
+      장애 유형, 환경, 익숙함은 사람마다 다릅니다.
+      어느 채널로 오셔도 똑같은 한 사람으로 환대받습니다.
+    </p>
+    <div class="channels">
+      <a href="mailto:radio@blossomway.kr?subject=%5B%EA%B0%9C%EA%B5%AD%20%EC%B0%B8%EC%97%AC%20%EC%8B%A0%EC%B2%AD%5D&body=%EC%9D%B4%EB%A6%84%2F%EB%B3%84%EB%AA%85%3A%20%0A%EC%97%B0%EB%9D%BD%EC%B2%98%3A%20%0A%EB%B0%A9%EC%86%A1%EC%9D%84%20%EB%B0%9B%EC%9D%84%20%EB%B0%A9%EC%8B%9D%3A%20%0A%ED%95%9C%20%EC%A4%84%20%EC%82%AC%EC%97%B0%3A%20" class="channel">
+        <div class="ch-icon">✉</div>
+        <div class="ch-label">이메일로 신청</div>
+        <div class="ch-detail">radio@blossomway.kr<br>제목 양식이 자동으로 채워집니다.</div>
+      </a>
+      <a href="#" class="channel" id="kakao-link" onclick="alert('카카오톡 채널 연결 준비 중입니다. 운영팀이 곧 안내 드릴게요.'); return false;">
+        <div class="ch-icon">💬</div>
+        <div class="ch-label">카카오톡으로 신청</div>
+        <div class="ch-detail">‘BLOSSOM W.A.Y.’ 채널 검색<br>한 줄 메시지로 신청 가능합니다.</div>
+      </a>
+      <a href="tel:" class="channel" onclick="alert('전화 안내 번호는 운영팀 확정 후 게시됩니다. 메일로 먼저 알려 주시면 전화 드리겠습니다.'); return false;">
+        <div class="ch-icon">📞</div>
+        <div class="ch-label">전화로 신청</div>
+        <div class="ch-detail">시각장애·고령 참여자<br>음성으로 사연을 남길 수 있습니다.</div>
+      </a>
+      <a href="mailto:radio@blossomway.kr?subject=%5B%EB%8B%A8%EC%B2%B4%20%EC%9D%BC%EA%B4%84%20%EC%8B%A0%EC%B2%AD%5D" class="channel">
+        <div class="ch-icon">⌘</div>
+        <div class="ch-label">단체·노조 일괄 신청</div>
+        <div class="ch-detail">10인 이상 단체 단위<br>대표 메일로 안내 드립니다.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="section-label">자주 묻는 질문</div>
+    <h2 class="section-title">먼저 답해 둘 것들.</h2>
+
+    <details>
+      <summary>비용이 드나요?</summary>
+      <p>개국 파일럿 참여자 30분께는 첫 1:1 라디오 방송 1편이 무료로 제공됩니다. 이후 정기 이용 모델은 단체 구독·기업 CSR·지자체 사업 형태로 우선 검토 중이며, 개인에게 부담을 직접 지우지 않는 구조를 원칙으로 합니다.</p>
+    </details>
+    <details>
+      <summary>장애 정보를 꼭 적어야 하나요?</summary>
+      <p>아니요. 모두 선택사항입니다. ‘말하고 싶지 않음’이 기본값이며, 적지 않으셔도 방송 제작에 지장이 없습니다. 다만 장애 유형을 알려 주시면 안내 속도, 자막 여부, 음성 결, 표현 방식이 한 단계 더 자기다워집니다.</p>
+    </details>
+    <details>
+      <summary>제 사연이 외부에 공개되나요?</summary>
+      <p>아니요. 1:1 방송은 본인 외에는 들을 수 없습니다. 외부 공유나 사례 인용은 본인 동의를 반드시 거치며, 동의 후에도 언제든 철회·삭제 요청이 가능합니다. 사연의 소유권은 끝까지 당신에게 있습니다.</p>
+    </details>
+    <details>
+      <summary>가족이 신청해도 되나요?</summary>
+      <p>장애인 당사자의 동의가 있다면 가족·활동지원사가 대신 신청·전달을 도와드릴 수 있습니다. ‘방송을 받을 방식’에서 ‘보호자/활동지원사 전달’을 선택해 주세요.</p>
+    </details>
+    <details>
+      <summary>첫 방송은 언제 받게 되나요?</summary>
+      <p>파일럿 단계에서는 신청 후 통상 5–7일 안에 첫 1:1 방송을 받으실 수 있습니다. 파일럿 정원이 마감된 이후 신청하신 분은 다음 차수 시작 시점에 우선 안내 드립니다.</p>
+    </details>
+    <details>
+      <summary>AI가 만든 방송이라는 점이 마음에 걸립니다.</summary>
+      <p>이해합니다. 이 방송국은 AI가 ‘더 잘하는’ 자리를 강조하지 않습니다. AI는 도구이고, 방송의 주인공은 끝까지 당신의 사연입니다. 우리는 당신을 학습 데이터로 보지 않습니다.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap-wide">
+    <div class="org-line">BLOSSOM W.A.Y. · A LITTLE RADIO FOR ONE PERSON AT A TIME</div>
+    <h4>장애인이 주인이 되는 AI 라디오 방송국.</h4>
+    <p>
+      이 방송국은 휴리스틱(주)의 BLOSSOM W.A.Y. 라이프 컴패니언 인프라 위에 만들어집니다.
+      Vertex AI · Gemini TTS 22종 페르소나 · Suno AI · Supabase 기반의 1:1 맞춤 방송 파이프라인을 토대로,
+      세계한궁협회 약 4만 개 노인복지관 네트워크와 협력해 장애·고령·만성질환 교차 영역에서 ‘동행의 매체’를 실험합니다.
+    </p>
+    <div class="partners">
+      <div><span>주관</span>주식회사 휴리스틱</div>
+      <div><span>서비스</span>주식회사 와이즈앤올드</div>
+      <div><span>협력</span>세계한궁협회</div>
+      <div><span>협력</span>한궁세계화연구소</div>
+    </div>
+    <p style="margin-top: 1.5rem;">
+      문의 · 단체 협력 제안:
+      <a href="mailto:radio@blossomway.kr" style="color: #d4c8b3; border-bottom: 1px solid #6a5a40;">radio@blossomway.kr</a>
+    </p>
+    <p class="legal">
+      © 2026 Heuristic Co., Ltd. · BLOSSOM W.A.Y. RADIO 개국 파일럿. 본 페이지의 신청 정보는 첫 방송 제작과 안내 외의 목적으로 사용되지 않으며, 본인 요청 시 즉시 폐기됩니다. 사연·방송의 저작권 및 인격권은 참여자 본인에게 있습니다.
+    </p>
+  </div>
+</footer>
+
+<script>
+  // ============================================================
+  // 신청 카운터 (공유 저장소) + 본인 신청 기록 (개인 저장소)
+  // ============================================================
+  const COUNT_KEY = 'blossom-pilot-signup-count';
+  const PILOT_TARGET = 30;
+
+  async function loadCount() {
+    try {
+      const res = await window.storage.get(COUNT_KEY, true);
+      const count = res ? parseInt(res.value, 10) : 0;
+      const el = document.getElementById('signup-count');
+      if (count > 0) {
+        el.textContent = count;
+      } else {
+        el.textContent = '곧';
+        document.getElementById('signup-target').textContent = '— 첫 청취자를 기다리고 있습니다 (정원 30명)';
+      }
+      if (count >= PILOT_TARGET) {
+        document.getElementById('signup-target').textContent = '· 1차 정원 마감 — 다음 차수 대기자로 신청됩니다';
+      }
+    } catch (e) {
+      // storage unavailable — fail silently
+      const el = document.getElementById('signup-count');
+      el.textContent = '곧';
+    }
+  }
+
+  async function bumpCount() {
+    try {
+      let current = 0;
+      try {
+        const res = await window.storage.get(COUNT_KEY, true);
+        if (res) current = parseInt(res.value, 10) || 0;
+      } catch (_) { current = 0; }
+      await window.storage.set(COUNT_KEY, String(current + 1), true);
+      return current + 1;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  loadCount();
+
+  // ============================================================
+  // 폼 제출 처리
+  // ============================================================
+  const form = document.getElementById('signup-form');
+  const formCard = document.getElementById('form-card');
+  const confirmation = document.getElementById('confirmation');
+  const summary = document.getElementById('summary');
+  const mailtoBtn = document.getElementById('mailto-btn');
+
+  function showError(id) {
+    document.getElementById(id).classList.add('shown');
+  }
+  function hideError(id) {
+    document.getElementById(id).classList.remove('shown');
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    let valid = true;
+
+    const name = form.name.value.trim();
+    const channel = form.channel.value;
+    const contact = form.contact.value.trim();
+    const agree = form.agree.checked;
+
+    if (!name) { showError('err-name'); valid = false; } else hideError('err-name');
+    if (!channel) { showError('err-channel'); valid = false; } else hideError('err-channel');
+    if (!contact) { showError('err-contact'); valid = false; } else hideError('err-contact');
+    if (!agree) { showError('err-agree'); valid = false; } else hideError('err-agree');
+
+    if (!valid) {
+      // focus first error
+      const firstError = document.querySelector('.error-msg.shown');
+      if (firstError) firstError.scrollIntoView({behavior: 'smooth', block: 'center'});
+      return;
+    }
+
+    const topics = Array.from(form.querySelectorAll('input[name="topic"]:checked')).map(c => c.value);
+    const data = {
+      name,
+      channel,
+      contact,
+      topics: topics.join(', ') || '—',
+      djStyle: form.dj_style.options[form.dj_style.selectedIndex].text,
+      story: form.story.value.trim() || '—',
+      org: form.org.value.trim() || '—',
+      disability: form.disability.options[form.disability.selectedIndex].text,
+      submittedAt: new Date().toLocaleString('ko-KR')
+    };
+
+    // 본인 기록 (개인 저장소 — 이 사용자만 볼 수 있음)
+    try {
+      await window.storage.set('my-signup', JSON.stringify(data), false);
+    } catch (_) {}
+
+    // 공유 카운터 증가
+    const newCount = await bumpCount();
+    if (newCount !== null) {
+      document.getElementById('signup-count').textContent = newCount;
+    }
+
+    // 채널 표시 한국어
+    const channelLabel = {
+      kakao: '카카오톡 링크',
+      sms: '문자 (SMS)',
+      call: '전화 음성 안내',
+      email: '이메일',
+      caregiver: '보호자/활동지원사 전달'
+    }[channel] || channel;
+
+    // 요약 채우기
+    summary.innerHTML = `
+      <dt>이름 / 별명</dt><dd>${escapeHtml(data.name)}</dd>
+      <dt>방송 받을 방식</dt><dd>${channelLabel}</dd>
+      <dt>연락처</dt><dd>${escapeHtml(data.contact)}</dd>
+      <dt>듣고 싶은 주제</dt><dd>${escapeHtml(data.topics)}</dd>
+      ${data.story !== '—' ? `<dt>한 줄 사연</dt><dd>${escapeHtml(data.story)}</dd>` : ''}
+      ${data.org !== '—' ? `<dt>소속</dt><dd>${escapeHtml(data.org)}</dd>` : ''}
+      <dt>신청 시각</dt><dd>${data.submittedAt}</dd>
+    `;
+
+    // mailto 링크 구성
+    const subj = `[개국 참여 신청] ${data.name}`;
+    const body = `장애인 1:1 AI 라디오 방송국 개국 참여 신청\n\n` +
+                 `이름/별명: ${data.name}\n` +
+                 `방송 받을 방식: ${channelLabel}\n` +
+                 `연락처: ${data.contact}\n` +
+                 `듣고 싶은 주제: ${data.topics}\n` +
+                 `선호 DJ 분위기: ${data.djStyle}\n` +
+                 `한 줄 사연: ${data.story}\n` +
+                 `소속: ${data.org}\n` +
+                 `장애 유형: ${data.disability}\n` +
+                 `신청 시각: ${data.submittedAt}\n\n` +
+                 `— BLOSSOM W.A.Y. 개국 참여자 모집 페이지에서 자동 작성됨`;
+    mailtoBtn.href = `mailto:radio@blossomway.kr?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+
+    // 폼 숨기고 확인 표시
+    form.style.display = 'none';
+    confirmation.classList.add('shown');
+    confirmation.scrollIntoView({behavior: 'smooth', block: 'start'});
+  });
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+  }
+</script>
+
+</body>
+</html>
